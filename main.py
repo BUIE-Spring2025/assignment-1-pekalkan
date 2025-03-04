@@ -1,11 +1,16 @@
 def int_to_roman(num):
     """
     Convert an integer to a Roman numeral using only if-else statements.
+    If the number is out of the valid range (1-3999), return None.
 
     :param num: Integer value between 1 and 3999 inclusive.
-    :return: A string representing the Roman numeral of the integer.
+    :return: A string representing the Roman numeral of the integer or None if out of range.
     """
     
+    # If num is outside the valid range, return None
+    if num < 1 or num > 3999:
+        return None
+
     roman_number = ""
 
     # Handle 1000s
@@ -67,8 +72,4 @@ def int_to_roman(num):
         roman_number += "I" * num
 
     return roman_number
-
-# Example usage
-print(int_to_roman(1987))  # Output: MCMLXXXVII
-
 
